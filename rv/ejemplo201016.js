@@ -21,7 +21,7 @@ pieza.camara.position.z=20;
 
 var lienzo = document.getElementById("ejemplo3d");
 pieza.renderizador = new THREE.WebGLRenderer({canvas: lienzo,antialias: true});
-pieza.rederizador.setSize(600,600);
+pieza.renderizador.setSize(600,600);
 
 pieza.escena=new THREE.Scene();
 pieza.escena.add(Pieza);
