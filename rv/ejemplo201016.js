@@ -28,7 +28,7 @@ pieza.escena.add(Pieza);
 }
 
 function loop(){
-requestAnimationFrame(pieza.loop);
+requestAnimationFrame(loop);
 pieza.rotate(0.05);
 pieza.renderizador.render(pieza.escena,pieza.camara);
 }
