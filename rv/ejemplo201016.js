@@ -24,7 +24,7 @@ pieza.renderizador = new THREE.WebGLRenderer({canvas: lienzo,antialias: true});
 pieza.renderizador.setSize(600,600);
 
 pieza.escena=new THREE.Scene();
-pieza.escena.add(Pieza);
+pieza.escena.add(pieza);
 }
 
 function loop(){
