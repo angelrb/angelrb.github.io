@@ -4,12 +4,15 @@ function Pieza(){
   this.piernaDer = new THREE.Mesh(new THREE.BoxGeometry(1,5,1));
   var cuerpo = new THREE.Mesh(new THREE.BoxGeometry(5,10,5));
   this.add(this.piernaIzq,this.piernaDer,cuerpo);
+  
   this.piernaIzq.position.z=2.5;
   this.piernaIzq.position.y=-5;
-  this.piernaIzq.position.x=-3;
-  this.piernaDer.position.z=-2.5;
+  this.piernaIzq.position.x=-4;
+  
+  this.piernaDer.position.z=2.5;
   this.piernaDer.position.y=-5;
-  this.piernaIzq.position.x=3;
+  this.piernaIzq.position.x=4;
+  
   cuerpo.position.z=2.5;
 }
 
