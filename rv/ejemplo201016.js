@@ -8,7 +8,6 @@ function Pieza(){
   this.piernaIzq.position.z=2.5;
   this.piernaIzq.position.y=-5;
   this.piernaIzq.position.x=-3;
-
   
   this.piernaDer.position.z=2.5;
   this.piernaDer.position.y=-5;
@@ -36,8 +35,8 @@ pieza.escena.add(pieza);
 function loop(){
 requestAnimationFrame(loop);
 pieza.rotateY(0.05);
-pieza.piernaIzq.rotateX(0.5);
-pieza.piernaDer.rotateX(0.05);
+pieza.piernaIzq.rotateX(0.02);
+pieza.piernaDer.rotateX(0.02);
 pieza.renderizador.render(pieza.escena,pieza.camara);
 }
 
