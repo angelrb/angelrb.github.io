@@ -7,7 +7,7 @@ function Pieza(){
   
   this.piernaIzq.position.z=2.5;
   this.piernaIzq.position.y=-5;
-  this.piernaIzq.position.x=-6;
+
   
   this.piernaDer.position.z=2.5;
   this.piernaDer.position.y=-5;
