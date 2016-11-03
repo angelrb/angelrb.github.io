@@ -223,16 +223,24 @@ var pF = new AJEDREZ.Peon();
   AJEDREZ.escena.add(AJEDREZ.torreB[i]);
   AJEDREZ.torreB[i].castShadow = true;
   AJEDREZ.torreB[i].receiveShadow = true;
-   
-  AJEDREZ.peonB[i] = new THREE.Mesh( pF, material3);
-  AJEDREZ.escena.add(AJEDREZ.peonB[i]);
-  AJEDREZ.peonB[i].castShadow = true;
-  AJEDREZ.peonB[i].receiveShadow = true;
+ }
+  for (var j=1;j<=8;j++){
+  AJEDREZ.peonB[j] = new THREE.Mesh( pF, material3);
+  AJEDREZ.escena.add(AJEDREZ.peonB[j]);
+  AJEDREZ.peonB[j].castShadow = true;
+  AJEDREZ.peonB[j].receiveShadow = true;
  }
  AJEDREZ.torreB[1].position.set(10,10,-10);
- AJEDREZ.torreB[2].position.set(80,10,-10); 
+ AJEDREZ.torreB[2].position.set(80,10,-10);
+  
  AJEDREZ.peonB[1].position.set(10,20,-10);
- AJEDREZ.peonB[2].position.set(80,20,-10);
+ AJEDREZ.peonB[2].position.set(20,20,-10);
+ AJEDREZ.peonB[3].position.set(30,20,-10);
+ AJEDREZ.peonB[4].position.set(40,20,-10);
+ AJEDREZ.peonB[5].position.set(50,20,-10);
+ AJEDREZ.peonB[6].position.set(60,20,-10);
+AJEDREZ.peonB[7].position.set(70,20,-10);
+AJEDREZ.peonB[8].position.set(80,20,-10);
 }
 
 AJEDREZ.retrollamada4 = function (textura5){
@@ -246,16 +254,23 @@ var pF = new AJEDREZ.Peon();
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
   AJEDREZ.torreN[i].castShadow = true;
   AJEDREZ.torreN[i].receiveShadow = true;
-   
-  AJEDREZ.peonN[i] = new THREE.Mesh( pF, material4);
-  AJEDREZ.escena.add(AJEDREZ.peonN[i]);
-  AJEDREZ.peonN[i].castShadow = true;
-  AJEDREZ.peonN[i].receiveShadow = true;
+ }
+  for (var j=1;j<=8;j++){   
+  AJEDREZ.peonN[j] = new THREE.Mesh( pF, material4);
+  AJEDREZ.escena.add(AJEDREZ.peonN[j]);
+  AJEDREZ.peonN[j].castShadow = true;
+  AJEDREZ.peonN[j].receiveShadow = true;
  }
  AJEDREZ.torreN[1].position.set(10,80,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
  AJEDREZ.peonN[1].position.set(10,70,-10);
- AJEDREZ.peonN[2].position.set(80,70,-10);
+ AJEDREZ.peonN[2].position.set(20,70,-10);
+ AJEDREZ.peonN[3].position.set(30,70,-10);
+ AJEDREZ.peonN[4].position.set(40,70,-10);
+ AJEDREZ.peonN[5].position.set(50,70,-10);
+ AJEDREZ.peonN[6].position.set(60,70,-10);
+ AJEDREZ.peonN[7].position.set(70,70,-10); 
+ AJEDREZ.peonN[8].position.set(80,70,-10);
 }
 
 AJEDREZ.setup = function(){
