@@ -90,6 +90,7 @@ this.scale(5,5,7);
 }
 
 AJEDREZ.Torre.prototype = new THREE.Geometry();
+
 //Alfil
 AJEDREZ.Alfil=function(){
 
@@ -123,20 +124,16 @@ var base5Malla = new THREE.Mesh(base5);
 var cimaMalla = new THREE.Mesh(cima); 
 var cima1Malla = new THREE.Mesh(cima1); 
  
-var alfil= new THREE.Geometry(); 
- 
-alfil.merge(baseMalla.geometry,baseMalla.matrix); 
-alfil.merge(base1Malla.geometry,base1Malla.matrix); 
-alfil.merge(base2Malla.geometry,base2Malla.matrix); 
-alfil.merge(base3Malla.geometry,base3Malla.matrix); 
-alfil.merge(base4Malla.geometry,base4Malla.matrix); 
-alfil.merge(base5Malla.geometry,base5Malla.matrix); 
-alfil.merge(cimaMalla.geometry,cimaMalla.matrix); 
-alfil.merge(cima1Malla.geometry,cima1Malla.matrix);
-
-var material = new THREE.MeshNormalMaterial(); 
-var alfilMalla = new THREE.Mesh(alfil,material); 
-alfil.rotateX(Math.PI/8); 
+this.merge(baseMalla.geometry,baseMalla.matrix); 
+this.merge(base1Malla.geometry,base1Malla.matrix); 
+this.merge(base2Malla.geometry,base2Malla.matrix); 
+this.merge(base3Malla.geometry,base3Malla.matrix); 
+this.merge(base4Malla.geometry,base4Malla.matrix); 
+this.merge(base5Malla.geometry,base5Malla.matrix); 
+this.merge(cimaMalla.geometry,cimaMalla.matrix); 
+this.merge(cima1Malla.geometry,cima1Malla.matrix);
+this.rotateX(Math.PI/8); 
+this.scale(5,5,7);
 }
 
 AJEDREZ.Alfil.prototype = new THREE.Geometry();
@@ -284,7 +281,7 @@ var aF = new AJEDREZ.Alfil();
  }
  for (var k=1;k<=2;k++){
   AJEDREZ.alfilB[k] = new THREE.Mesh( aF, material3);
-  AJEDREZ.escena.add(AJEDREZ.alfilB[K]);
+  AJEDREZ.escena.add(AJEDREZ.alfilB[k]);
   AJEDREZ.alfilB[k].castShadow = true;
   AJEDREZ.alfilB[k].receiveShadow = true;
  }
