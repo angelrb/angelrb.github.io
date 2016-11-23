@@ -290,7 +290,7 @@ var aF = new AJEDREZ.Alfil();
  AJEDREZ.torreB[2].position.set(80,10,-10);
 
  AJEDREZ.alfilB[1].position.set(20,10,-10);
- AJEDREZ.alfil[2].position.set(70,10,-10);
+ AJEDREZ.alfilB[2].position.set(70,10,-10);
   
  AJEDREZ.peonB[1].position.set(10,20,-10);
  AJEDREZ.peonB[2].position.set(20,20,-10);
