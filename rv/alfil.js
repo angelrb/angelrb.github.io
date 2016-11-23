@@ -4,7 +4,8 @@ var base2 = new THREE.CylinderGeometry(0.8, 0.8, 0.2, 50, 25);
 var base3 = new THREE.CylinderGeometry(0.6, 0.7, 1.5, 50, 25); 
 var base4 = new THREE.CylinderGeometry(0.5, 0.8, 0.2, 50, 25); 
 var base5 = new THREE.CylinderGeometry(0.7, 0.7, 0.1, 50, 25); 
-var cima = new THREE.SphereGeometry( 0.65, 32, 32 ); 
+var cima = new THREE.SphereGeometry( 0.65, 32, 32 );
+var cima1 = new THREE.SphereGeometry( 0.2, 32, 32 );
 
 
 base.translate(0, -1, 0); 
@@ -14,6 +15,7 @@ base3.translate(0, -0.4, 0);
 base4.translate(0, 0.5, 0); 
 base5.translate(0, 0.6, 0);
 cima.translate(0, 1.1, 0);
+cima1.translate(0, 1.7, 0);
  
 var baseMalla = new THREE.Mesh(base); 
 var base1Malla = new THREE.Mesh(base1); 
@@ -22,6 +24,7 @@ var base3Malla = new THREE.Mesh(base3);
 var base4Malla = new THREE.Mesh(base4); 
 var base5Malla = new THREE.Mesh(base5); 
 var cimaMalla = new THREE.Mesh(cima); 
+var cima1Malla = new THREE.Mesh(cima1); 
  
 var peonForma = new THREE.Geometry(); 
  
@@ -32,7 +35,8 @@ peonForma.merge(base3Malla.geometry,base3Malla.matrix);
 peonForma.merge(base4Malla.geometry,base4Malla.matrix); 
 peonForma.merge(base5Malla.geometry,base5Malla.matrix); 
 peonForma.merge(cimaMalla.geometry,cimaMalla.matrix); 
- 
+peonForma.merge(cima1Malla.geometry,cima1Malla.matrix);
+
 var material = new THREE.MeshNormalMaterial(); 
 var peonMalla = new THREE.Mesh(peonForma,material); 
 peonMalla.rotateX(Math.PI/8); 
