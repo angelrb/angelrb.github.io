@@ -4,7 +4,8 @@ var base2 = new THREE.TorusGeometry( 0.5, 0.2, 8, 6 );
 var base3 = new  THREE.CylinderGeometry(0.25, 0.55, 1, 50, 25); 
 var cima = new THREE.SphereGeometry( 0.4, 32, 32 ); 
 
-base2.rotateX(Math.PI/2); 
+base2.rotateX(Math.PI/2);
+base2.translate(0, -1, 0); 
 base.translate(0, -1, 0); 
 base1.translate(0, -0.9, 0); 
 base3.translate(0, -0.2, 0); 
