@@ -7,7 +7,7 @@ var base5 = new THREE.CylinderGeometry(0.6, 0.6, 0.1, 50, 25);
 //var cima = new THREE.SphereGeometry( 0.55, 32, 32 );
 var points = [];
 for ( var i = 0; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.sin( i * 0.2 ) * 10 + 5, ( i - 5 ) * 2 ) );
+	points.push( new THREE.Vector2( Math.sin( i * 0.2 ), ( i - 5 )  ) );
 }
 var cima = new THREE.LatheGeometry( points );
 var cima1 = new THREE.SphereGeometry( 0.1, 32, 32 );
