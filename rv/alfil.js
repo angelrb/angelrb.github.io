@@ -11,9 +11,9 @@ base.translate(0, -1, 0);
 base1.translate(0, -0.8, 0); 
 base2.translate(0, -0.6, 0); 
 base3.translate(0, -0.4, 0); 
-base4.translate(0, 0.7, 0); 
-base5.translate(0, 0.8, 0);
-cima.translate(0, 1.3, 0);
+base4.translate(0, 0.5, 0); 
+base5.translate(0, 0.6, 0);
+cima.translate(0, 1.1, 0);
  
 var baseMalla = new THREE.Mesh(base); 
 var base1Malla = new THREE.Mesh(base1); 
