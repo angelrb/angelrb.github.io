@@ -38,11 +38,11 @@ alfil.merge(cimaMalla.geometry,cimaMalla.matrix);
 alfil.merge(cima1Malla.geometry,cima1Malla.matrix);
 
 var material = new THREE.MeshNormalMaterial(); 
-var peonMalla = new THREE.Mesh(alfil,material); 
+var alfilMalla = new THREE.Mesh(alfil,material); 
 alfil.rotateX(Math.PI/8); 
  
 var escena = new THREE.Scene(); 
-escena.add(peonMalla); 
+escena.add(alfilMalla); 
 var camara = new THREE.PerspectiveCamera(); 
 camara.position.z=5; 
 var renderizador = new THREE.WebGLRenderer(); 
