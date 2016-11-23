@@ -10,7 +10,7 @@ base.translate(0, 0, 0);
 base1.translate(0, 0.2, 0); 
 base2.translate(0, 0.4, 0); 
 base3.translate(0, 0.6, 0); 
-base4.translate(0, 0.6, 0); 
+base4.translate(0, 2.6, 0); 
  
 var baseMalla = new THREE.Mesh(base); 
 var base1Malla = new THREE.Mesh(base1); 
