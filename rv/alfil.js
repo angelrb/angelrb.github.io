@@ -1,7 +1,7 @@
 var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
-var base1 = new  THREE.CylinderGeometry(0.8, 0.7, 0.2, 50, 25);
+var base1 = new  THREE.CylinderGeometry(0.7, 0.8, 0.2, 50, 25);
 var base2 = new THREE.CylinderGeometry( 0.8, 0.8, 0.2, 50, 25); 
-var base3 = new  THREE.CylinderGeometry(0.7, 0.6, .5, 50, 25); 
+var base3 = new  THREE.CylinderGeometry(0.6, 0.7, 1, 50, 25); 
 //var cima = new THREE.SphereGeometry( 0.4, 32, 32 ); 
 
 
