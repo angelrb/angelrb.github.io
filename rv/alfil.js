@@ -1,6 +1,6 @@
 var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25); 
 var base1 = new  THREE.CylinderGeometry(0.5, 0.5, 0.5, 50, 25);
-var base2 = new THREE.TorusGeometry( 0.5, 0.25, 10, 25 ); 
+var base2 = new THREE.TorusGeometry( 0.5, 0.25, 8, 25 ); 
 var base3 = new  THREE.CylinderGeometry(0.25, 0.55, 1, 50, 25); 
 var cima = new THREE.SphereGeometry( 0.4, 32, 32 ); 
 
