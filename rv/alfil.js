@@ -31,7 +31,7 @@ peonMalla.rotateX(Math.PI/8);
  
 var escena = new THREE.Scene(); 
 escena.add(peonMalla); 
-var camara = new THREE.Camera(); 
+var camara = new THREE.CubeCamera(); 
 //camara.position.z=1; 
 var renderizador = new THREE.WebGLRenderer(); 
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95); 
