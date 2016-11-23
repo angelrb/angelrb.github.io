@@ -26,20 +26,20 @@ var base5Malla = new THREE.Mesh(base5);
 var cimaMalla = new THREE.Mesh(cima); 
 var cima1Malla = new THREE.Mesh(cima1); 
  
-var peonForma = new THREE.Geometry(); 
+var alfil= new THREE.Geometry(); 
  
-peonForma.merge(baseMalla.geometry,baseMalla.matrix); 
-peonForma.merge(base1Malla.geometry,base1Malla.matrix); 
-peonForma.merge(base2Malla.geometry,base2Malla.matrix); 
-peonForma.merge(base3Malla.geometry,base3Malla.matrix); 
-peonForma.merge(base4Malla.geometry,base4Malla.matrix); 
-peonForma.merge(base5Malla.geometry,base5Malla.matrix); 
-peonForma.merge(cimaMalla.geometry,cimaMalla.matrix); 
-peonForma.merge(cima1Malla.geometry,cima1Malla.matrix);
+alfil.merge(baseMalla.geometry,baseMalla.matrix); 
+alfil.merge(base1Malla.geometry,base1Malla.matrix); 
+alfil.merge(base2Malla.geometry,base2Malla.matrix); 
+alfil.merge(base3Malla.geometry,base3Malla.matrix); 
+alfil.merge(base4Malla.geometry,base4Malla.matrix); 
+alfil.merge(base5Malla.geometry,base5Malla.matrix); 
+alfil.merge(cimaMalla.geometry,cimaMalla.matrix); 
+alfil.merge(cima1Malla.geometry,cima1Malla.matrix);
 
 var material = new THREE.MeshNormalMaterial(); 
-var peonMalla = new THREE.Mesh(peonForma,material); 
-peonMalla.rotateX(Math.PI/8); 
+var peonMalla = new THREE.Mesh(alfil,material); 
+alfil.rotateX(Math.PI/8); 
  
 var escena = new THREE.Scene(); 
 escena.add(peonMalla); 
