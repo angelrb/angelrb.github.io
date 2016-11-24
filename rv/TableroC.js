@@ -91,6 +91,74 @@ this.scale(5,5,7);
 
 AJEDREZ.Torre.prototype = new THREE.Geometry();
 
+//Rey
+AJEDREZ.Rey = function(){
+  THREE.Geometry.call(this);
+
+var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
+var base1 = new THREE.CylinderGeometry(0.7, 0.9, 0.4, 50, 25);
+var base2 = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25); 
+var base3 = new THREE.CylinderGeometry(0.4, 0.7, 2, 50, 25); 
+var base4 = new THREE.TorusGeometry( 0.8, 0.1, 16, 100 );
+var base5 = new THREE.CylinderGeometry(0.8, 0.8, 0.15, 50, 25);
+var base6 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
+var base7 = new THREE.CylinderGeometry(0.6, 0.6, 0.3, 50, 25);
+var base8 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
+var base9 = new THREE.CylinderGeometry(0.8, 0.5, 0.9, 50, 25);
+var cima = new THREE.BoxGeometry( 0.4, 1.3, 0.3 );
+var cima1 = new THREE.BoxGeometry( 1, 0.3, 0.3 );
+var cima2 = new THREE.TorusGeometry( 0.18, 0.1, 16, 100 );
+
+base.translate(0, -1, 0); 
+base1.translate(0, -0.7, 0); 
+base2.translate(0, -0.4, 0); 
+base3.translate(0, 0.65, 0);
+base4.rotateX(Math.PI/2);
+base4.translate(0, 1.7, 0); 
+base5.translate(0, 1.7, 0);
+base6.rotateX(Math.PI/2);
+base6.translate(0, 1.8, 0);
+base7.translate(0, 1.9, 0);
+base8.rotateX(Math.PI/2);
+base8.translate(0, 2.1, 0);
+base9.translate(0, 2.2, 0);
+cima.translate(0, 3, 0);
+cima1.translate(0, 3.2, 0);
+cima2.rotateX(Math.PI/2);
+cima2.translate(0, 2.7, 0);
+
+var baseMalla = new THREE.Mesh(base); 
+var base1Malla = new THREE.Mesh(base1); 
+var base2Malla = new THREE.Mesh(base2); 
+var base3Malla = new THREE.Mesh(base3); 
+var base4Malla = new THREE.Mesh(base4); 
+var base5Malla = new THREE.Mesh(base5); 
+var base6Malla = new THREE.Mesh(base6); 
+var base7Malla = new THREE.Mesh(base7); 
+var base8Malla = new THREE.Mesh(base8); 
+var base9Malla = new THREE.Mesh(base9); 
+var cimaMalla = new THREE.Mesh(cima); 
+var cima1Malla = new THREE.Mesh(cima1); 
+var cima2Malla = new THREE.Mesh(cima2); 
+ 
+this.merge(baseMalla.geometry,baseMalla.matrix); 
+this.merge(base1Malla.geometry,base1Malla.matrix); 
+this.merge(base2Malla.geometry,base2Malla.matrix); 
+this.merge(base3Malla.geometry,base3Malla.matrix); 
+this.merge(base4Malla.geometry,base4Malla.matrix); 
+this.merge(base5Malla.geometry,base5Malla.matrix); 
+this.merge(base6Malla.geometry,base6Malla.matrix); 
+this.merge(base7Malla.geometry,base7Malla.matrix); 
+this.merge(base8Malla.geometry,base8Malla.matrix); 
+this.merge(base9Malla.geometry,base9Malla.matrix); 
+this.merge(cimaMalla.geometry,cimaMalla.matrix); 
+this.merge(cima1Malla.geometry,cima1Malla.matrix);
+this.merge(cima2Malla.geometry,cima2Malla.matrix);
+this.rotateX(Math.PI*3/2);
+this.scale(5,5,7);
+}
+AJEDREZ.Rey.prototype = new THREE.Geometry();
+
 //Alfil
 AJEDREZ.Alfil=function(){
 
@@ -104,7 +172,6 @@ var base4 = new THREE.CylinderGeometry(0.3, 0.6, 0.2, 50, 25);
 var base5 = new THREE.CylinderGeometry(0.6, 0.6, 0.1, 50, 25); 
 var cima = new THREE.SphereGeometry( 0.55, 32, 32 );
 var cima1 = new THREE.SphereGeometry( 0.1, 32, 32 );
-
 
 base.translate(0, -1, 0); 
 base1.translate(0, -0.8, 0); 
@@ -264,9 +331,11 @@ var material3 = new THREE.MeshLambertMaterial({map : textura4});
 var tF = new AJEDREZ.Torre();
 var pF = new AJEDREZ.Peon();
 var aF = new AJEDREZ.Alfil();
+var rF = new AJEDREZ.Rey();
  AJEDREZ.torreB = new Array();
  AJEDREZ.peonB = new Array();
  AJEDREZ.alfilB = new Array();
+ AJEDREZ.reyB = new Array();
  for (var i=1;i<=2;i++){
   AJEDREZ.torreB[i] = new THREE.Mesh( tF, material3);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]);
@@ -285,6 +354,14 @@ var aF = new AJEDREZ.Alfil();
   AJEDREZ.alfilB[k].castShadow = true;
   AJEDREZ.alfilB[k].receiveShadow = true;
  }
+  
+  AJEDREZ.reyB[1] = new THREE.Mesh( rF, material3);
+  AJEDREZ.escena.add(AJEDREZ.reyB[1]);
+  AJEDREZ.reyB[1].castShadow = true;
+  AJEDREZ.reyB[1].receiveShadow = true;
+
+ AJEDREZ.reyB[1].position.set(10,50,-10);
+ 
   
  AJEDREZ.torreB[1].position.set(10,10,-10);
  AJEDREZ.torreB[2].position.set(80,10,-10);
