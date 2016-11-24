@@ -28,7 +28,7 @@ base9.translate(0, 2.2, 0);
 cima.translate(0, 3, 0);
 cima1.translate(0, 3.2, 0);
 cima2.rotateX(Math.PI/2);
-cima2.translate(0, 2.5, 0);
+cima2.translate(0, 2.8, 0);
 
 var baseMalla = new THREE.Mesh(base); 
 var base1Malla = new THREE.Mesh(base1); 
