@@ -7,7 +7,7 @@ var base5 = new THREE.CylinderGeometry(0.8, 0.8, 0.15, 50, 25);
 var base6 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
 var base7 = new THREE.CylinderGeometry(0.6, 0.6, 0.3, 50, 25);
 var base8 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
-var base9 = new THREE.CylinderGeometry(0.9, 0.6, 0.3, 50, 25);
+var base9 = new THREE.CylinderGeometry(0.8, 0.6, 0.7, 50, 25);
 //var cima = new THREE.SphereGeometry( 0.55, 32, 32 );
 //var cima1 = new THREE.SphereGeometry( 0.1, 32, 32 );
 
