@@ -384,9 +384,11 @@ var material4 = new THREE.MeshLambertMaterial({map : textura5});
 var tF = new AJEDREZ.Torre();
 var pF = new AJEDREZ.Peon();
 var aF = new AJEDREZ.Alfil();
+var rF = new AJEDREZ.Rey();
  AJEDREZ.torreN = new Array();
  AJEDREZ.peonN = new Array();
  AJEDREZ.alfilN = new Array();
+ AJEDREZ.reyN = new Array(); 
  for (var i=1;i<=2;i++){
   AJEDREZ.torreN[i] = new THREE.Mesh( tF, material4);
   AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
@@ -405,6 +407,13 @@ var aF = new AJEDREZ.Alfil();
   AJEDREZ.alfilN[k].castShadow = true;
   AJEDREZ.alfilN[k].receiveShadow = true;
  }
+ 
+  AJEDREZ.reyN[1] = new THREE.Mesh( rF, material4);
+  AJEDREZ.escena.add(AJEDREZ.reyN[1]);
+  AJEDREZ.reyN[1].castShadow = true;
+  AJEDREZ.reyN[1].receiveShadow = true;
+
+ AJEDREZ.reyN[1].position.set(40,80,-10);
  AJEDREZ.torreN[1].position.set(10,80,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
  AJEDREZ.alfilN[1].position.set(20,80,-10);
