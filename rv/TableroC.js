@@ -323,7 +323,7 @@ var aF = new AJEDREZ.Alfil();
   AJEDREZ.peonN[j].receiveShadow = true;
  }
   for (var k=1;k<=2;k++){
-  AJEDREZ.alfilN[k] = new THREE.Mesh( aF, material3);
+  AJEDREZ.alfilN[k] = new THREE.Mesh( aF, material4);
   AJEDREZ.escena.add(AJEDREZ.alfilN[k]);
   AJEDREZ.alfilN[k].castShadow = true;
   AJEDREZ.alfilN[k].receiveShadow = true;
