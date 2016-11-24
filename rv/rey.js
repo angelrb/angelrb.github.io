@@ -8,8 +8,8 @@ var base6 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
 var base7 = new THREE.CylinderGeometry(0.6, 0.6, 0.3, 50, 25);
 var base8 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
 var base9 = new THREE.CylinderGeometry(0.8, 0.5, 0.9, 50, 25);
-var cima = new THREE.BoxGeometry( 0.5, 1, 0.3 );
-var cima1 = new THREE.BoxGeometry( 1, 0.5, 0.3 );
+var cima = new THREE.BoxGeometry( 0.5, 1.5, 0.3 );
+var cima1 = new THREE.BoxGeometry( 1, 0.3, 0.3 );
 
 base.translate(0, -1, 0); 
 base1.translate(0, -0.7, 0); 
