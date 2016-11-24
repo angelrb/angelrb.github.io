@@ -360,7 +360,7 @@ var rF = new AJEDREZ.Rey();
   AJEDREZ.reyB[1].castShadow = true;
   AJEDREZ.reyB[1].receiveShadow = true;
 
- AJEDREZ.reyB[1].position.set(50,10,-10);
+ AJEDREZ.reyB[1].position.set(40,10,-10);
  
   
  AJEDREZ.torreB[1].position.set(10,10,-10);
