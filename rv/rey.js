@@ -8,7 +8,7 @@ var base6 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
 var base7 = new THREE.CylinderGeometry(0.6, 0.6, 0.3, 50, 25);
 var base8 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
 var base9 = new THREE.CylinderGeometry(0.8, 0.5, 0.9, 50, 25);
-var cima = new THREE.BoxGeometry( 0.2, 0.5, 0.2 );
+var cima = new THREE.BoxGeometry( 0.5, 0.5, 0.5 );
 //var cima1 = new THREE.SphereGeometry( 0.1, 32, 32 );
 
 
@@ -25,7 +25,7 @@ base7.translate(0, 1.9, 0);
 base8.rotateX(Math.PI/2);
 base8.translate(0, 2.1, 0);
 base9.translate(0, 2.2, 0);
-cima.translate(0, 3.1, 0);
+cima.translate(0, 3, 0);
 //cima1.translate(0, 1.5, 0);
  
 var baseMalla = new THREE.Mesh(base); 
