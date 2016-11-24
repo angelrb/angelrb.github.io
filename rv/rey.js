@@ -8,8 +8,8 @@ var base6 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
 var base7 = new THREE.CylinderGeometry(0.6, 0.6, 0.3, 50, 25);
 var base8 = new THREE.TorusGeometry( 0.6, 0.1, 16, 100 );
 var base9 = new THREE.CylinderGeometry(0.8, 0.5, 0.9, 50, 25);
-var cima = new THREE.BoxGeometry( 0.5, 1, 0.5 );
-//var cima1 = new THREE.SphereGeometry( 0.1, 32, 32 );
+var cima = new THREE.BoxGeometry( 0.5, 1, 0.3 );
+var cima1 = new THREE.BoxGeometry( 1, 0.5, 0.3 );
 
 
 base.translate(0, -1, 0); 
@@ -26,7 +26,7 @@ base8.rotateX(Math.PI/2);
 base8.translate(0, 2.1, 0);
 base9.translate(0, 2.2, 0);
 cima.translate(0, 3, 0);
-//cima1.translate(0, 1.5, 0);
+cima1.translate(0, 3.5, 0);
  
 var baseMalla = new THREE.Mesh(base); 
 var base1Malla = new THREE.Mesh(base1); 
@@ -39,7 +39,7 @@ var base7Malla = new THREE.Mesh(base7);
 var base8Malla = new THREE.Mesh(base8); 
 var base9Malla = new THREE.Mesh(base9); 
 var cimaMalla = new THREE.Mesh(cima); 
-//var cima1Malla = new THREE.Mesh(cima1); 
+var cima1Malla = new THREE.Mesh(cima1); 
  
 var alfil= new THREE.Geometry(); 
  
@@ -54,7 +54,7 @@ alfil.merge(base7Malla.geometry,base7Malla.matrix);
 alfil.merge(base8Malla.geometry,base8Malla.matrix); 
 alfil.merge(base9Malla.geometry,base9Malla.matrix); 
 alfil.merge(cimaMalla.geometry,cimaMalla.matrix); 
-//alfil.merge(cima1Malla.geometry,cima1Malla.matrix);
+alfil.merge(cima1Malla.geometry,cima1Malla.matrix);
 
 var material = new THREE.MeshNormalMaterial(); 
 var alfilMalla = new THREE.Mesh(alfil,material); 
