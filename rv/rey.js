@@ -10,7 +10,7 @@ var base2 = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 
 base.translate(0, -1, 0); 
 base1.translate(0, -0.7, 0); 
-base2.translate(0, -0.6, 0); 
+base2.translate(0, -0.4, 0); 
 //base3.translate(0, -0.2, 0); 
 //base4.translate(0, 0.5, 0); 
 //base5.translate(0, 0.6, 0);
