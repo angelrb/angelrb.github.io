@@ -3,7 +3,7 @@ var AJEDREZ = new Object();
 AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF,2);
 AJEDREZ.luzPuntual.position.x = -70;
 AJEDREZ.luzPuntual.position.y = -20;
-AJEDREZ.luzPuntual.position.z = -20;
+AJEDREZ.luzPuntual.position.z = -60;
 
 
 AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 1, 1000);
