@@ -3,7 +3,7 @@ var base1 = new THREE.CylinderGeometry(0.7, 0.9, 0.4, 50, 25);
 var base2 = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25); 
 var base3 = new THREE.CylinderGeometry(0.4, 0.7, 2, 50, 25); 
 var base4 = new THREE.TorusGeometry( 0.7, 0.1, 16, 100 );
-var base5 = new THREE.CylinderGeometry(0.6, 0.6, 0.1, 50, 25); 
+var base5 = new THREE.CylinderGeometry(0.7, 0.7, 0.1, 50, 25); 
 //var cima = new THREE.SphereGeometry( 0.55, 32, 32 );
 //var cima1 = new THREE.SphereGeometry( 0.1, 32, 32 );
 
@@ -13,8 +13,8 @@ base1.translate(0, -0.7, 0);
 base2.translate(0, -0.4, 0); 
 base3.translate(0, 0.65, 0);
 base4.rotateX(Math.PI/2);
-base4.translate(0, 1.5, 0); 
-base5.translate(0, 1.5, 0);
+base4.translate(0, 1.7, 0); 
+base5.translate(0, 1.7, 0);
 //cima.translate(0, 0.9, 0);
 //cima1.translate(0, 1.5, 0);
  
