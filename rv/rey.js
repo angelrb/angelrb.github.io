@@ -11,7 +11,6 @@ var base9 = new THREE.CylinderGeometry(0.8, 0.5, 0.9, 50, 25);
 var cima = new THREE.BoxGeometry( 0.5, 1, 0.3 );
 var cima1 = new THREE.BoxGeometry( 1, 0.5, 0.3 );
 
-
 base.translate(0, -1, 0); 
 base1.translate(0, -0.7, 0); 
 base2.translate(0, -0.4, 0); 
@@ -63,7 +62,7 @@ alfil.rotateX(Math.PI/8);
 var escena = new THREE.Scene(); 
 escena.add(alfilMalla); 
 var camara = new THREE.PerspectiveCamera(); 
-camara.position.z=5; 
+camara.position.z=10; 
 var renderizador = new THREE.WebGLRenderer(); 
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95); 
 document.body.appendChild(renderizador.domElement); 
