@@ -22,7 +22,7 @@ base6.rotateX(Math.PI/2);
 base6.translate(0, 1.8, 0);
 base7.translate(0, 1.9, 0);
 base8.rotateX(Math.PI/2);
-base8.translate(0, 2, 0);
+base8.translate(0, 2.1, 0);
 //cima.translate(0, 0.9, 0);
 //cima1.translate(0, 1.5, 0);
  
