@@ -1,7 +1,7 @@
 var base = new THREE.CylinderGeometry(0.9, 0.9, 0.2, 50, 25); 
-var base1 = new THREE.CylinderGeometry(0.8, 0.8, 0.1, 50, 25);
-var base2 = new THREE.CylinderGeometry(0.7, 0.9, 0.3, 50, 25); 
-var base3 = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25); 
+var base1 = new THREE.CylinderGeometry(0.7, 0.9, 0.4, 50, 25);
+var base2 = new THREE.CylinderGeometry(0.9, 0.9, 0.3, 50, 25); 
+var base3 = new THREE.CylinderGeometry(0.4, 0.7, 0.7, 50, 25); 
 //var base4 = new THREE.CylinderGeometry(0.3, 0.6, 0.2, 50, 25); 
 //var base5 = new THREE.CylinderGeometry(0.6, 0.6, 0.1, 50, 25); 
 //var cima = new THREE.SphereGeometry( 0.55, 32, 32 );
@@ -10,8 +10,8 @@ var base3 = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
 
 base.translate(0, -1, 0); 
 base1.translate(0, -0.8, 0); 
-base2.translate(0, -0.7, 0); 
-base3.translate(0, -0.4, 0); 
+base2.translate(0, -0.4, 0); 
+base3.translate(0, -0.1, 0); 
 //base4.translate(0, 0.5, 0); 
 //base5.translate(0, 0.6, 0);
 //cima.translate(0, 0.9, 0);
