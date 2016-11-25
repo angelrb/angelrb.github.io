@@ -170,7 +170,7 @@ var base2 = new THREE.CylinderGeometry(0.8, 0.8, 0.2, 50, 25);
 var base3 = new THREE.CylinderGeometry(0.5, 0.7, 1.5, 50, 25); 
 var base4 = new THREE.CylinderGeometry(0.3, 0.6, 0.2, 50, 25); 
 var base5 = new THREE.CylinderGeometry(0.6, 0.6, 0.1, 50, 25); 
-var cima = new THREE.SphereGeometry( 0.55, 32, 32 );
+var cima = new THREE.SphereGeometry( 0.5, 32, 32 );
 var cima1 = new THREE.SphereGeometry( 0.1, 32, 32 );
 
 base.translate(0, -1, 0); 
