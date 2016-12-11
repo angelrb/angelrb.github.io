@@ -44,28 +44,28 @@ var cimaMalla = new THREE.Mesh(cima);
 var cima1Malla = new THREE.Mesh(cima1); 
 var cima2Malla = new THREE.Mesh(cima2); 
  
-var alfil= new THREE.Geometry(); 
+var rey= new THREE.Geometry(); 
  
-alfil.merge(baseMalla.geometry,baseMalla.matrix); 
-alfil.merge(base1Malla.geometry,base1Malla.matrix); 
-alfil.merge(base2Malla.geometry,base2Malla.matrix); 
-alfil.merge(base3Malla.geometry,base3Malla.matrix); 
-alfil.merge(base4Malla.geometry,base4Malla.matrix); 
-alfil.merge(base5Malla.geometry,base5Malla.matrix); 
-alfil.merge(base6Malla.geometry,base6Malla.matrix); 
-alfil.merge(base7Malla.geometry,base7Malla.matrix); 
-alfil.merge(base8Malla.geometry,base8Malla.matrix); 
-alfil.merge(base9Malla.geometry,base9Malla.matrix); 
-alfil.merge(cimaMalla.geometry,cimaMalla.matrix); 
-alfil.merge(cima1Malla.geometry,cima1Malla.matrix);
-alfil.merge(cima2Malla.geometry,cima2Malla.matrix);
+rey.merge(baseMalla.geometry,baseMalla.matrix); 
+rey.merge(base1Malla.geometry,base1Malla.matrix); 
+rey.merge(base2Malla.geometry,base2Malla.matrix); 
+rey.merge(base3Malla.geometry,base3Malla.matrix); 
+rey.merge(base4Malla.geometry,base4Malla.matrix); 
+rey.merge(base5Malla.geometry,base5Malla.matrix); 
+rey.merge(base6Malla.geometry,base6Malla.matrix); 
+rey.merge(base7Malla.geometry,base7Malla.matrix); 
+rey.merge(base8Malla.geometry,base8Malla.matrix); 
+rey.merge(base9Malla.geometry,base9Malla.matrix); 
+rey.merge(cimaMalla.geometry,cimaMalla.matrix); 
+rey.merge(cima1Malla.geometry,cima1Malla.matrix);
+rey.merge(cima2Malla.geometry,cima2Malla.matrix);
 
 var material = new THREE.MeshNormalMaterial(); 
-var alfilMalla = new THREE.Mesh(alfil,material); 
-alfil.rotateX(Math.PI/8); 
+var reyMalla = new THREE.Mesh(rey,material); 
+rey.rotateX(Math.PI/8); 
  
 var escena = new THREE.Scene(); 
-escena.add(alfilMalla); 
+escena.add(reyMalla); 
 var camara = new THREE.PerspectiveCamera(); 
 camara.position.z=10; 
 var renderizador = new THREE.WebGLRenderer(); 
