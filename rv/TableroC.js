@@ -398,7 +398,7 @@ var reF = new AJEDREZ.Reina();
  AJEDREZ.peonB = new Array();
  AJEDREZ.alfilB = new Array();
  AJEDREZ.reyB = new Array();
- AJEDREZ.reyinaB = new Array();
+ AJEDREZ.reinaB = new Array();
  for (var i=1;i<=2;i++){
   AJEDREZ.torreB[i] = new THREE.Mesh( tF, material3);
   AJEDREZ.escena.add(AJEDREZ.torreB[i]);
