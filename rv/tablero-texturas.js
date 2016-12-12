@@ -1,172 +1,221 @@
-//Camra de Perspectiva
-var campoVision = 45; //Grados
-var relacionAspecto = window.innerWidth/window.innerHeight;
-var planoCercano =100;
-var planoLejano = 1000;
-var camara = new THREE.PerspectiveCamera(campoVision,relacionAspecto,planoCercano,planoLejano);
-camara.position.z = -150;
-camara.position.x = 45;
-camara.position.y = -50;
-camara.lookAt(new THREE.Vector3(45,45,0));
 
-//ILUMINACION
-var iluminacion=new THREE.PointLight(0xFF00FF);
-iluminacion.position.x = -45;
-iluminacion.position.y = -45;
-iluminacion.position.z = -120;
+var AJEDREZ = new Object();
 
-var iluminacion1=new THREE.PointLight(0x00FFFF);
-iluminacion1.position.x = 145;
-iluminacion1.position.y = 145;
-iluminacion1.position.z = -120;
-
-var iluminacion2=new THREE.PointLight(0xFFFF00);
-iluminacion2.position.x = 145;
-iluminacion2.position.y = -45;
-iluminacion2.position.z = -120;
-
-//CASILLA BLANCA
-var TEXTURACB = new Object();
-TEXTURACB.retrollamada = function (texturacb){
-var materialcb = new THREE.MeshBasicMaterial({ map: texturacb} );
-TEXTURACB.malla = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), materialcb);
-
-}
-
-TEXTURACB.setup = function(){
-TEXTURACB.escena = new THREE.Scene();
-TEXTURACB.renderizador = new THREE.WebGLRenderer();
-TEXTURACB.renderizador.setSize( window.innerWidth, window.innerHeight);
-
-var cargadorcb = new THREE.TextureLoader();
-cargadorcb.load("earth.jpg", TEXTURACB.retrollamada);
-TEXTURACB.renderizador.render(TEXTURACB.escena, camara);
-}
+AJEDREZ.luzPuntual = new THREE.PointLight(0xFFFFFF);
+AJEDREZ.luzPuntual.position.x = -120;
+AJEDREZ.luzPuntual.position.y = -45;
+AJEDREZ.luzPuntual.position.z = -45;
 
 
-TEXTURACB.setup();
+AJEDREZ.camara = new THREE.PerspectiveCamera( 45, window.innerWidth/ window.innerHeight, 1, 1000);
+  
+AJEDREZ.camara.position.z =-150;
+AJEDREZ.camara.position.x =45;
+AJEDREZ.camara.position.y =-45;
+AJEDREZ.camara.lookAt(new THREE.Vector3(45,45,0));
+
+AJEDREZ.renderizador = new THREE.WebGLRenderer();
+AJEDREZ.renderizador.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(AJEDREZ.renderizador.domElement);
+AJEDREZ.renderizador.showMapEnabled = true;
+
+//Torre Forma
+var base = new THREE.CylinderGeometry(0.7, 0.7, 0.2, 50, 25);
+var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
+var base3 = new  THREE.CylinderGeometry(0.35, 0.55, 1.5, 50, 25);
+var cima = new THREE.TorusGeometry( 0.35, 0.1, 16, 100 );
+var cima2 = new THREE.CylinderGeometry(0.55, 0.45, 0.2, 50, 25);
+var punta = new THREE.ConeGeometry( 0.15, 0.2, 32 );
+var punta1 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
+var punta2 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
+var punta3 = new THREE.ConeGeometry( 0.15, 0.2, 32 );
+var anillo = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
 
 
-//CASILLA GRIS
-var formaCasillaGris=new THREE.BoxGeometry(10,10,10,10,10,10);
-var mallaCasillaGris=new THREE.MeshLambertMaterial({color:0x6b6b6b});
 
-//Torre 1
-var torreMalla = new THREE.Mesh(torreForma,material);
-torreMalla.rotateX(Math.PI*3/2);
-torreMalla.scale.set(5,5,7);
-torreMalla.position.set(10,10,-10);
+base2.rotateX(Math.PI/2);
+cima.rotateX(Math.PI/2);
+anillo.rotateX(Math.PI/2);
 
-//Torre 2
-material2.transparent = true;
-material2.opacity = 0.75;
-var torreMalla1 = new THREE.Mesh(torreForma,material2);
-torreMalla1.rotateX(Math.PI*3/2);
-torreMalla1.scale.set(5,5,7);
-torreMalla1.position.set(10,80,-10);
 
-//Torre 3
-var material3 = new THREE.MeshLambertMaterial({color : 0xfafdff});
-material3.opacity = 0.5;
-material3.transparent = true;
-var torreMalla2 = new THREE.Mesh(torreForma,material3);
-torreMalla2.rotateX(Math.PI*3/2);
-torreMalla2.scale.set(5,5,7);
-torreMalla2.position.set(80,10,-10);
+base.translate(0, -1, 0);
+base2.translate(0, -0.9, 0);
+base3.translate(0, 0.05, 0);
+cima.translate(0, 0.8, 0);
+cima2.translate(0, 0.9, 0);
+punta.translate(0, 1.1, 0.35);
+punta1.translate(0, 1.1, -0.35);
+punta2.translate(0.35, 1.1, 0);
+punta3.translate(-0.35, 1.1, 0);
+anillo.translate(0,-0.2, 0);
 
-//Torre 4
-var material4 = new THREE.MeshLambertMaterial({color : 0x2c4d64});
-material4.opacity = 0.25;
-material4.transparent = true;
-var torreMalla3 = new THREE.Mesh(torreForma,material4);
-torreMalla3.rotateX(Math.PI*3/2);
-torreMalla3.scale.set(5,5,7);
-torreMalla3.position.set(80,80,-10);
 
-//TABLERO
-var formaTablero=new THREE.BoxGeometry(100,100,5,10,10,10);
-var mallaTablero=new THREE.MeshLambertMaterial({color:0x412a09});
-var Tablero=new THREE.Mesh(formaTablero,mallaTablero);
-Tablero.position.set(45,45,0);
+var baseMalla = new THREE.Mesh(base);
+var base2Malla = new THREE.Mesh(base2);
+var base3Malla = new THREE.Mesh(base3);
+var cimaMalla = new THREE.Mesh(cima);
+var cima2Malla = new THREE.Mesh(cima2);
+var puntaMalla = new THREE.Mesh(punta);
+var punta1Malla = new THREE.Mesh(punta1);
+var punta2Malla = new THREE.Mesh(punta2);
+var punta3Malla = new THREE.Mesh(punta3);
+var anilloMalla = new THREE.Mesh(anillo);
 
-var casillaBlanca = new Array();
-var casillaGris = new Array();
 
-var gris=1;
-var blanca=1;
+var torreForma = new THREE.Geometry();
 
-//ESCENA
-var escena = new THREE.Scene();
+torreForma.merge(baseMalla.geometry,baseMalla.matrix);
+torreForma.merge(base2Malla.geometry,base2Malla.matrix);
+torreForma.merge(base3Malla.geometry,base3Malla.matrix);
+torreForma.merge(cimaMalla.geometry,cimaMalla.matrix);
+torreForma.merge(cima2Malla.geometry,cima2Malla.matrix);
+torreForma.merge(puntaMalla.geometry,puntaMalla.matrix);
+torreForma.merge(punta1Malla.geometry,punta1Malla.matrix);
+torreForma.merge(punta2Malla.geometry,punta2Malla.matrix);
+torreForma.merge(punta3Malla.geometry,punta3Malla.matrix);
+torreForma.merge(anilloMalla.geometry,anilloMalla.matrix);
 
+//casillas blancas
+AJEDREZ.retrollamada = function (textura1){
+material = new THREE.MeshLambertMaterial({ map: textura1} );
+AJEDREZ.casillaB = new Array();
 for(var i=1; i<=32; i++){
-casillaBlanca[i] = new THREE.Mesh(TEXTURACB.retrollamada);
-casillaGris[i] = new THREE.Mesh(formaCasillaGris, mallaCasillaGris);
-casillaBlanca[i].receiveShadow = true;
-casillaGris[i].receiveShadow = true;
-  }
-
-for(var f=1; f<=8; f++)
+AJEDREZ.casillaB[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material);
+}
+var  b=1;
+ for(var f=1; f<=8; f++)
 {
   for(var c=1; c<=8; c++)
   {
-    
     if(f%2==0)
     {
-      if(c%2==0)
-      {
-       casillaGris[gris].position.set((f*10),(c*10),0);
-       escena.add(casillaGris[gris]);
-       gris=gris+1;
+      if(c%2==0){
+       b=b;
       }
-      else
+       else
       {
-       casillaBlanca[blanca].position.set((f*10),(c*10),0);
-       escena.add(casillaBlanca[blanca]);
-       blanca=blanca+1;
+       AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
+       AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
+       AJEDREZ.casillaB[b].receiveShadow = true;
+       b=b+1;
       }
     }
     else
     {
       if(c%2==0)
       {
-      casillaBlanca[blanca].position.set((f*10),(c*10),0);
-      escena.add(casillaBlanca[blanca]);
-      blanca=blanca+1;
-      }
-      else
-      {
-      casillaGris[gris].position.set((f*10),(c*10),0);
-      escena.add(casillaGris[gris]);
-      gris=gris+1;
+      AJEDREZ.casillaB[b].position.set((f*10),(c*10),0);
+      AJEDREZ.escena.add(AJEDREZ.casillaB[b]);
+      AJEDREZ.casillaB[b].receiveShadow = true;
+      b=b+1;
       }
     }
   }
 }
+ 
+  
+}
 
-escena.add(Tablero);
-escena.add(torreMalla);
-escena.add(torreMalla1);
-escena.add(torreMalla2);
-escena.add(torreMalla3);
-escena.add(iluminacion);
-escena.add(iluminacion1);
-escena.add(iluminacion2);
+AJEDREZ.retrollamada1 = function (textura2){
+var material1 = new THREE.MeshLambertMaterial({ map: textura2} );
+AJEDREZ.casillaN = new Array();
+for(var i=1; i<=32; i++){
+AJEDREZ.casillaN[i] = new THREE.Mesh( new THREE.BoxGeometry(10,10,10,10,10,10), material1);
 
+}
+var  n=1;
+  for(var x=1; x<=8; x++)
+{
+  for(var z=1; z<=8; z++)
+  {
+    if(x%2==0)
+    {
+      if(z%2==0)
+      {
+       AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
+       AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
+       AJEDREZ.casillaN[n].receiveShadow = true;
+       
+       n=n+1;
+      }
+    }
+    else
+    {
+      if(z%2==0){
+       n=n
+      }
+       else
+      {
+     AJEDREZ.casillaN[n].position.set((x*10),(z*10),0);
+     AJEDREZ.escena.add(AJEDREZ.casillaN[n]);
+     AJEDREZ.casillaN[n].receiveShadow = true;
+      n=n+1;
+      }
+    }
+  }
+}
+}
 
-//RENDERIZADOR
-var renderizador = new THREE.WebGLRenderer();
-renderizador.setSize( window.innerWidth, window.innerHeight);
-renderizador.shadowMapEnabled = true;
-document.body.appendChild(renderizador.domElement);
+AJEDREZ.retrollamada2 = function (textura3){
+var material2 = new THREE.MeshLambertMaterial({ map: textura3} );
+AJEDREZ.malla2 = new THREE.Mesh( new THREE.BoxGeometry(100,100,7,10,10,10), material2);
+AJEDREZ.malla2.position.set(45,45,0);
+AJEDREZ.escena.add(AJEDREZ.malla2);
+AJEDREZ.malla2.receiveShadow = true;
+}
 
-Tablero.castShadow = true;
-Tablero.receiveShadow = true;
-torreMalla.castShadow = true;
-torreMalla1.castShadow = true;
-torreMalla2.castShadow = true;
-torreMalla3.castShadow = true;
-iluminacion.castShadow = true;
-iluminacion1.castShadow = true;
-iluminacion2.castShadow = true;
+AJEDREZ.retrollamada3 = function (textura4){
+var material3 = new THREE.MeshLambertMaterial({map : textura4});
+ AJEDREZ.torreB = new Array();
+ for (var i=1;i<=2;i++){
+  AJEDREZ.torreB[i] = new THREE.Mesh( torreForma, material3);
+  AJEDREZ.torreB[i].rotateX(Math.PI*3/2);
+  AJEDREZ.torreB[i].scale.set(5,5,7);
+  AJEDREZ.escena.add(AJEDREZ.torreB[i]);
+  AJEDREZ.torreB[i].castShadow = true;
+  AJEDREZ.torreB[i].receiveShadow = true;
+ }
+ AJEDREZ.torreB[1].position.set(10,10,-10);
+ AJEDREZ.torreB[2].position.set(10,80,-10);
+}
 
-renderizador.render(escena, camara);
+AJEDREZ.retrollamada4 = function (textura5){
+var material4 = new THREE.MeshLambertMaterial({map : textura5});
+ AJEDREZ.torreN = new Array();
+ for (var i=1;i<=2;i++){
+  AJEDREZ.torreN[i] = new THREE.Mesh( torreForma, material4);
+  AJEDREZ.torreN[i].rotateX(Math.PI*3/2);
+  AJEDREZ.torreN[i].scale.set(5,5,7);
+  AJEDREZ.escena.add(AJEDREZ.torreN[i]); 
+  AJEDREZ.torreN[i].castShadow = true;
+  AJEDREZ.torreN[i].receiveShadow = true;
+ }
+ AJEDREZ.torreN[1].position.set(80,10,-10);
+ AJEDREZ.torreN[2].position.set(80,80,-10);
+}
+
+AJEDREZ.setup = function(){
+AJEDREZ.escena = new THREE.Scene();
+
+var cargador = new THREE.TextureLoader();
+  cargador.load("MarmolBlanco.jpg", AJEDREZ.retrollamada);
+var cargador1 = new THREE.TextureLoader();
+  cargador1.load("MarmolGris.jpg", AJEDREZ.retrollamada1);
+var cargador2 = new THREE.TextureLoader();
+  cargador2.load("marmolcafe.jpg", AJEDREZ.retrollamada2);
+var cargador3 = new THREE.TextureLoader();
+  cargador3.load("MarmolBlanco.jpg", AJEDREZ.retrollamada3);
+var cargador4 = new THREE.TextureLoader();
+  cargador4.load("MarmolGris.jpg", AJEDREZ.retrollamada4);
+AJEDREZ.escena.add(AJEDREZ.luzPuntual);
+AJEDREZ.luzPuntual.castShadow = true;
+
+   
+}
+
+AJEDREZ.loop = function(){
+requestAnimationFrame(AJEDREZ.loop);
+AJEDREZ.renderizador.render(AJEDREZ.escena, AJEDREZ.camara);
+}
+AJEDREZ.setup(); 
+AJEDREZ.loop();
