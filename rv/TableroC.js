@@ -167,7 +167,7 @@ AJEDREZ.Reina = function(){
 var base2 = new THREE.TorusGeometry( 0.5, 0.2, 16, 100 );
 var base3 = new THREE.CylinderGeometry(0.5, 0.6,0.4,50,25);
 var base4 = new THREE.TorusGeometry( 0.45, 0.1, 16, 100 );
-var base5 = new THREE.CylinderGeometry(0.3, 0.45,1,50,25);
+var base5 = new THREE.CylinderGeometry(0.3, 0.45,1.5,50,25);
 var base6 = new THREE.TorusGeometry( 0.3, 0.15, 16, 100 );
 var base7 = new THREE.CylinderGeometry(0.5, 0.35,0.4,50,25);
 var base8 = new THREE.TorusGeometry( 0.4, 0.1, 16, 100 );
@@ -184,11 +184,11 @@ base2.translate(0, -0.9, 0);
 base3.translate(0, -0.6, 0);
 base4.translate(0, -0.4, 0);
 base5.translate(0, 0.2, 0);
-base6.translate(0, 0.8, 0);
-base7.translate(0, 1.1, 0);
-base8.translate(0, 1.3, 0);
-base9.translate(0, 1.2, 0);
-base10.translate(0, 1.6, 0);
+base6.translate(0, 1.3, 0);
+base7.translate(0, 1.6, 0);
+base8.translate(0, 1.8, 0);
+base9.translate(0, 1.7, 0);
+base10.translate(0, 2.1, 0);
 
 var baseMalla = new THREE.Mesh(base);
 var base2Malla = new THREE.Mesh(base2);
