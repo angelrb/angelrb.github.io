@@ -487,7 +487,7 @@ var reF = new AJEDREZ.Reina();
   AJEDREZ.reinaN[1].receiveShadow = true;
 
  AJEDREZ.reyN[1].position.set(40,80,-10);
- AJEDREZ.reyN[1].position.set(50,80,-10);
+ AJEDREZ.reinaN[1].position.set(50,80,-10);
  AJEDREZ.torreN[1].position.set(10,80,-10);
  AJEDREZ.torreN[2].position.set(80,80,-10);
  AJEDREZ.alfilN[1].position.set(20,80,-10);
