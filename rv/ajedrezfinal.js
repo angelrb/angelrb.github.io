@@ -29,7 +29,7 @@ CaballoGeometry=function()
   this.merge(base4Malla.geometry,base4Malla.matrix);
   this.merge(base5Malla.geometry,base5Malla.matrix);
   this.merge(base6Malla.geometry,base6Malla.matrix);
-  this.scale(5,10,5);
+  //this.scale(5,10,5);
 }
 CaballoGeometry.prototype=new THREE.Geometry();
 
@@ -392,7 +392,7 @@ Environment.prototype.act=function()
       this.children[i].act(this);
   }
 }
-///////////////CASILLA///////////////
+//CASILLA//
 function Casillas(size,x,y)
 {
   cargador=new THREE.TextureLoader();
@@ -455,51 +455,51 @@ Environment.prototype.setMapPiezas=function(map)
     {
       if(map[i][j]==="c")
       {
-        this.add(new Caballo(true,(j*10)-50,(i*10)-50));
+        this.add(new Caballo(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="C")
       {
-        this.add(new Caballo(false,(j*10)-50,(i*10)-50));
+        this.add(new Caballo(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="a")
       {
-        this.add(new Alfil(true,(j*10)-50,(i*10)-50));
+        this.add(new Alfil(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="A")
       {
-        this.add(new Alfil(false,(j*10)-50,(i*10)-50));
+        this.add(new Alfil(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="x")
       {
-        this.add(new Reina(true,(j*10)-50,(i*10)-50));
+        this.add(new Reina(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="X")
       {
-        this.add(new Reina(false,(j*10)-50,(i*10)-50));
+        this.add(new Reina(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="r")
       {
-        this.add(new Rey(true,(j*10)-50,(i*10)-50));
+        this.add(new Rey(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="R")
       {
-        this.add(new Rey(false,(j*10)-50,(i*10)-50));
+        this.add(new Rey(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="t")
       {
-        this.add(new Torre(true,(j*10)-50,(i*10)-50));
+        this.add(new Torre(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="T")
       {
-        this.add(new Torre(false,(j*10)-50,(i*10)-50));
+        this.add(new Torre(false,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="p")
       {
-        this.add(new Peon(true,(j*10)-50,(i*10)-50));
+        this.add(new Peon(true,(j*10)-45,(i*10)-45));
       }
       if(map[i][j]==="P")
       {
-        this.add(new Peon(false,(j*10)-50,(i*10)-50));
+        this.add(new Peon(false,(j*10)-45,(i*10)-45));
       }
     }
   }
@@ -520,7 +520,7 @@ function Caballo(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -561,7 +561,7 @@ function Alfil(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -640,7 +640,7 @@ function Reina(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -735,7 +735,7 @@ function Rey(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -837,7 +837,7 @@ function Torre(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
@@ -925,7 +925,7 @@ function Peon(sTP,x,y)
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
   this.add(this.actuator);
-  //this.actuator.scale.set(9.5,9.5,9.5);
+  this.actuator.scale.set(9.5,9.5,9.5);
   this.actuator.rotateX(Math.PI/2);
   this.actuator.castShadow=true;
 }
