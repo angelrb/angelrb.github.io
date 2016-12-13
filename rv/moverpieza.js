@@ -23,7 +23,7 @@ this.merge(cimaMalla.geometry,cimaMalla.matrix);
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
 
 /*CONSTRUCCIÓN DEL AGENTE*/
-function Agent( x=0, y=0 ){
+function Agent( x=50, y=50 ){
   THREE.Object3D.call( this );
   this.position.x = x;
   this.position.y = y;
