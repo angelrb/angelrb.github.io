@@ -298,7 +298,7 @@ function Casillas(size,x,y)
     textura=cargador.load('MarmolGris.jpg');
     THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
   else{
-    textura=cargador.load('marmolcafe.jpg');
+    textura=cargador.load('aluminio.jpg');
   THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.7,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
   //THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
@@ -401,15 +401,15 @@ Environment.prototype.setMapPiezas=function(map)
 }
 
 //CABALLO//
-function Caballo(sTP,x,y)
+function Caballo(tex,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+  this.tex = tex;
+  if(this.tex===true)
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.cnt = 0;
   this.sensor=new Sensor();
@@ -451,15 +451,15 @@ Caballo.prototype.plan=function(environment)
 };
 
 //ALFIL//
-function Alfil(sTP,x,y)
+function Alfil(tex,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+  this.tex = tex;
+  if(this.tex===true)
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -540,15 +540,15 @@ Alfil.prototype.plan=function(environment)
   }
 };
 //REINA//
-function Reina(sTP,x,y)
+function Reina(tex,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+  this.tex = tex;
+  if(this.tex===true)
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -643,15 +643,15 @@ Reina.prototype.plan=function(environment)
   }
 };
 //REY//
-function Rey(sTP,x,y)
+function Rey(tex,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+  this.tex = tex;
+  if(this.tex===true)
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg'); 
+    textura=cargador.load('aluminio.jpg'); 
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -754,15 +754,15 @@ Rey.prototype.plan=function(environment)
   }
 };
 //TORRE//
-function Torre(sTP,x,y)
+function Torre(tex,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+  this.tex = tex;
+  if(this.tex===true)
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -851,15 +851,15 @@ Torre.prototype.plan=function(environment)
   }
 };
 //PEON//
-function Peon(sTP,x,y)
+function Peon(tex,x,y)
 {
   cargador=new THREE.TextureLoader();
   Agent.call(this,x,y);
-  this.sTP = sTP;
-  if(this.sTP===true)
-    textura=cargador.load('MarmolGris.jpg');
+  this.tex = tex;
+  if(this.tex===true)
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('MarmolBlanco.jpg');
+    textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -1365,7 +1365,7 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var a=d=0.01,c,b,bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var a=d=0.01,c,b,bi=0,bj=0,nj=0,ni=0,turno=false,tex,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
