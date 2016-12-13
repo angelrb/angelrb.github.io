@@ -132,16 +132,16 @@ function movement(event) {
   var avance = 10;
   switch ( keyboard ){
     case 37:
-      environment.children[100].position.x+=avance;
-    break;
-    case 38:
-      environment.children[100].position.y+=-avance;
-    break;
-    case 39:
       environment.children[100].position.x+=-avance;
     break;
-    case 40:
+    case 38:
       environment.children[100].position.y+=avance;
+    break;
+    case 39:
+      environment.children[100].position.x+=avance;
+    break;
+    case 40:
+      environment.children[100].position.y+=-avance;
     break;
     }
 }
@@ -166,7 +166,7 @@ function setup(){
   pieza[4] = "          ";
   pieza[5] = "          ";
   pieza[6] = "          ";
-  pieza[7] = " p        ";
+  pieza[7] = "  p       ";
   pieza[8] = "          ";
   pieza[9] = "          ";
   
