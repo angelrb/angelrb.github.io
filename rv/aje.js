@@ -490,12 +490,12 @@ Alfil.prototype.sense=function(environment){
       this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
   }
   var obstaculo=this.sensor.intersectObjects(environment.children,true);    
-  if( obstaculo.length>0 && obstaculo[0].object.parent.sTP !== this.sTP ){
+  if( obstaculo.length>0 && obstaculo[0].object.parent.tex !== this.tex ){
     
     if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
       this.sensor.colision=false;
       if (obstaculo[0].distance<=Math.sqrt(2))
-        if (this.sTP === true){
+        if (this.tex === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazod.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazoi.translate(50+bi,-50+bj,0);
@@ -517,7 +517,7 @@ Alfil.prototype.sense=function(environment){
     else
       this.sensor.colision=true;
   }
-  else if ( obstaculo.length>0 && obstaculo[0].object.parent.sTP === this.sTP  ){
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.tex === this.tex  ){
     if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
       this.sensor.colision=true;  
   }
@@ -590,11 +590,11 @@ Reina.prototype.sense=function(environment){
       this.sensor.set(this.position, new THREE.Vector3(-Math.cos(Math.PI/4), -Math.sin(Math.PI/4), 0));
   }
   var obstaculo=this.sensor.intersectObjects(environment.children,true);
-  if( obstaculo.length>0 && obstaculo[0].object.parent.sTP !== this.sTP ){
+  if( obstaculo.length>0 && obstaculo[0].object.parent.tex !== this.tex ){
     if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
       this.sensor.colision=false;
       if (obstaculo[0].distance<=Math.sqrt(2))
-        if (this.sTP === true){
+        if (this.tex === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazod.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazoi.translate(50+bi,-50+bj,0);
@@ -616,7 +616,7 @@ Reina.prototype.sense=function(environment){
     else
       this.sensor.colision=true;
   }
-  else if ( obstaculo.length>0 && obstaculo[0].object.parent.sTP === this.sTP  ){
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.tex === this.tex  ){
     if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
       this.sensor.colision=true;  
   }
@@ -699,11 +699,11 @@ Rey.prototype.sense=function(environment){
     obstaculo[0].object.material.color.setHex(0xff00ff);}
   else
     this.sensor.colision=false;
-  if( obstaculo.length>0 && obstaculo[0].object.parent.sTP !== this.sTP ){
+  if( obstaculo.length>0 && obstaculo[0].object.parent.tex !== this.tex ){
     if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
       this.sensor.colision=false;
       if (obstaculo[0].distance<=Math.sqrt(2))
-        if (this.sTP === true){
+        if (this.tex === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazod.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazoi.translate(50+bi,-50+bj,0);
@@ -725,7 +725,7 @@ Rey.prototype.sense=function(environment){
     else
       this.sensor.colision=true;
   }
-  else if ( obstaculo.length>0 && obstaculo[0].object.parent.sTP === this.sTP  ){
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.tex === this.tex  ){
     if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
       this.sensor.colision=true;  
   }
@@ -800,11 +800,11 @@ Torre.prototype.sense=function(environment){
     obstaculo[0].object.material.color.setHex(0xff00ff);}
   else
     this.sensor.colision=false;
-  if( obstaculo.length>0 && obstaculo[0].object.parent.sTP !== this.sTP ){
+  if( obstaculo.length>0 && obstaculo[0].object.parent.tex !== this.tex ){
     if ( Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2))<=(obstaculo[0].distance+10*Math.sqrt(2)) ){
       this.sensor.colision=false;
       if (obstaculo[0].distance<=Math.sqrt(2))
-        if (this.sTP === true){
+        if (this.tex === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazod.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazoi.translate(50+bi,-50+bj,0);
@@ -826,7 +826,7 @@ Torre.prototype.sense=function(environment){
     else
       this.sensor.colision=true;
   }
-  else if ( obstaculo.length>0 && obstaculo[0].object.parent.sTP === this.sTP  ){
+  else if ( obstaculo.length>0 && obstaculo[0].object.parent.tex === this.tex  ){
     if( obstaculo[0].distance<Math.sqrt(Math.pow(X-x,2)+Math.pow(Y-y,2)) )
       this.sensor.colision=true;  
   }
@@ -915,13 +915,13 @@ Peon.prototype.sense=function(environment){
       this.sensor.colision=false;
   }
   else{ 
-    if( obstaculo.length>0 && obstaculo[0].object.parent.sTP !== this.sTP ){
+    if( obstaculo.length>0 && obstaculo[0].object.parent.tex !== this.tex ){
       if (obstaculo[0].distance<=10*Math.sqrt(2)){
         this.diagonal=true;
         this.sensor.colision=false;
       }
       if (obstaculo[0].distance<Math.sqrt(2)){
-        if (this.sTP === true){
+        if (this.tex === true){
           obstaculo[0].object.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazod.translate(50+bi,-50+bj,0);
           obstaculo[0].object.parent.brazoi.translate(50+bi,-50+bj,0);
@@ -950,7 +950,7 @@ Peon.prototype.plan=function(environment)
 {
   this.actuator.commands=[];
   if (this.sensor.colision === false){
-    if (this.sTP===true){
+    if (this.tex===true){
         if(Y>=-25 && Y<-15) {
           if( y-Y<=20 && y-Y>0 && x===X ) 
             this.actuator.commands.push('goStraightY');
@@ -1365,7 +1365,7 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var a=d=0.01,c,b,bi=0,bj=0,nj=0,ni=0,turno=false,tex,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var a=d=0.01,c,b,bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
