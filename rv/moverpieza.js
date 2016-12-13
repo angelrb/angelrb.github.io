@@ -174,7 +174,7 @@ function setup(){
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
   camara = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 1, 1000 );
-  camara.position.z = 120;
+  camara.position.z = 100;
   camara.position.y = -90;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
@@ -182,9 +182,9 @@ function setup(){
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
   luzPuntual=new THREE.PointLight(0xFFFFFF);
-  luzPuntual.position.x = 50;
-  luzPuntual.position.y = -50;
-  luzPuntual.position.z = 50;
+  luzPuntual.position.x = -1200;
+  luzPuntual.position.y = -45;
+  luzPuntual.position.z = -45;
   luzPuntual.castShadow=true;
   environment.add( camara );
   environment.add( luzPuntual );
