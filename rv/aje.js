@@ -18,7 +18,7 @@ Geometriacaballo=function()
 Geometriacaballo.prototype=new THREE.Geometry();
 
 //ALFIL GEOMETRIA//
-AlfilGeometry=function()
+Geometriaalfil=function()
 {
   THREE.Geometry.call(this);
   var BaseAlfil1=new THREE.CylinderGeometry( 0.2, 0.35, 1, 32 );
@@ -31,10 +31,10 @@ AlfilGeometry=function()
   this.merge(BaseAlfil.geometry,BaseAlfil.matrix);
   this.merge(CuerpoAlfil.geometry,CuerpoAlfil.matrix);
 }
-AlfilGeometry.prototype=new THREE.Geometry();
+Geometriaalfil.prototype=new THREE.Geometry();
 
 //REINA GEOMETRIA//
-ReinaGeometry=function()
+Geometriareina=function()
 {
   THREE.Geometry.call(this);
   var BaseReina1=new THREE.CylinderGeometry( 0.15, 0.3, 0.9, 32 );
@@ -50,10 +50,10 @@ ReinaGeometry=function()
   this.merge(CuerpoReina.geometry,CuerpoReina.matrix);
   this.merge(CoronaReina.geometry,CoronaReina.matrix);
 }
-ReinaGeometry.prototype=new THREE.Geometry();
+Geometriareina.prototype=new THREE.Geometry();
 
 //REY GEOMETRIA//
-ReyGeometry=function()
+Geometriarey=function()
 {
   THREE.Geometry.call(this);
   var BaseRey1=new THREE.CylinderGeometry( 0.2, 0.35, 0.9, 32 );
@@ -69,10 +69,10 @@ ReyGeometry=function()
   this.merge(CuerpoRey.geometry,CuerpoRey.matrix);
   this.merge(CoronaRey.geometry,CoronaRey.matrix);
 }
-ReyGeometry.prototype=new THREE.Geometry();
+Geometriarey.prototype=new THREE.Geometry();
 
 //PEON GEOMETRIA//
-PeonGeometry=function()
+Geometriapeon=function()
 {
   THREE.Geometry.call(this); 
   var BasePeon1=new THREE.CylinderGeometry( 0.2, 0.35, 0.8, 32 );
@@ -84,10 +84,10 @@ PeonGeometry=function()
   this.merge(BasePeon.geometry,BasePeon.matrix);
   this.merge(CabezaPeon.geometry,CabezaPeon.matrix);
 }
-PeonGeometry.prototype=new THREE.Geometry();
+Geometriapeon.prototype=new THREE.Geometry();
 
 //TORRE GEOMETRIA//
-TorreGeometry=function()
+Geometriatorre=function()
 {
   THREE.Geometry.call(this);
   var BaseTorre1=new THREE.CylinderGeometry( 0.25, 0.35, 0.8, 32 );
@@ -99,7 +99,7 @@ TorreGeometry=function()
   this.merge(BaseTorre.geometry,BaseTorre.matrix);
   this.merge(CuerpoTorre.geometry,CuerpoTorre.matrix);
 }
-TorreGeometry.prototype=new THREE.Geometry();
+Geometriatorre.prototype=new THREE.Geometry();
 
 //SENSOR//
 function Sensor(position,direction)
@@ -462,7 +462,7 @@ function Alfil(tex,x,y)
     textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new AlfilGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new Geometriaalfil(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernai=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernad=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoi=new THREE.Mesh(new THREE.BoxGeometry(5,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -551,7 +551,7 @@ function Reina(tex,x,y)
     textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new ReinaGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new Geometriareina(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernai=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernad=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoi=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -654,7 +654,7 @@ function Rey(tex,x,y)
     textura=cargador.load('aluminio.jpg'); 
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new ReyGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new Geometriarey(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernai=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernad=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoi=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -765,7 +765,7 @@ function Torre(tex,x,y)
     textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new Geometriatorre(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernai=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernad=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoi=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
@@ -862,7 +862,7 @@ function Peon(tex,x,y)
     textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new Geometriapeon(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernai=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernad=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoi=new THREE.Mesh(new THREE.BoxGeometry(6,1,1),new THREE.MeshLambertMaterial({map:textura}));
