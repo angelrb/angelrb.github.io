@@ -407,14 +407,14 @@ function Casillas(size,x,y)
     textura=cargador.load('metaln.jpg');
   else
     textura=cargador.load('cromo.jpg');
-  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.7),new THREE.MeshLambertMaterial({map:textura}));
-   //THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.4,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
+  //THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.7),new THREE.MeshLambertMaterial({map:textura}));
+  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,0.4,10,10,10),new THREE.MeshLambertMaterial({map:textura}));
   this.size=size;
   this.receiveShadow=true;
   this.position.x=x;
   this.position.y=y;
-  this.position.z=-14;
-    //this.position.z=-6;
+  //this.position.z=-14;
+  this.position.z=-6;
 }
 Casillas.prototype=new THREE.Mesh();
 
@@ -429,21 +429,21 @@ Environment.prototype.setMapCasilla=function(map)
       if(map[i][j]==="n")
       {
         sTC=1;
-        Casilla=new Casillas(10,(i*10)-50,(j*10)-50);
+        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="b")
       {
         sTC=2;
-        Casilla=new Casillas(10,(i*10)-50,(j*10)-50);
+        Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="B")
       {
         sTC=3;
-        Borde=new Casillas(10,(i*10)-50,(j*10)-50);
+        Borde=new Casillas(10,(i*10)-45,(j*10)-45);
         Borde.receiveShadow=true;
         this.add(Borde);
       }
