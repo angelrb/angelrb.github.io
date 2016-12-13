@@ -23,7 +23,7 @@ this.merge(cimaMalla.geometry,cimaMalla.matrix);
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
 
 /*CONSTRUCCIÓN DEL AGENTE*/
-function Agent( x=50, y=50 ){
+function Agent( x=45, y=-45 ){
   THREE.Object3D.call( this );
   this.position.x = x;
   this.position.y = y;
@@ -116,7 +116,7 @@ function Pieza( x, y ){
   this.position.x = x;
   this.position.y = y;
   this.position.z = 5;
-  textura = cargador.load( 'marmol_blanco.jpg' );
+  textura = cargador.load( 'aluminio.jpg' );
   this.actuator = new THREE.Mesh( new PROTOTIPO.Peon(), new THREE.MeshLambertMaterial( {map: textura} ) );
   this.actuator.scale.set( 7, 7, 7 );
   this.actuator.rotateX( Math.PI/2 );
@@ -129,7 +129,7 @@ Pieza.prototype = new Agent();
 
 function movement(event) { 
   var keyboard = event.which;  
-  var avance = 0.5;
+  var avance = 10;
   switch ( keyboard ){
     case 37:
       environment.children[100].position.x+=-avance;
@@ -182,7 +182,7 @@ function setup(){
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
-  luzPuntual=new THREE.PointLight(0xFFFFFF);
+  luzPuntual=new THREE.PointLight(0xFFFFFF,2);
   luzPuntual.position.x = -70;
   luzPuntual.position.y = -20;
   luzPuntual.position.z = -60;
