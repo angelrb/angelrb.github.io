@@ -23,7 +23,6 @@ this.merge(cimaMalla.geometry,cimaMalla.matrix);
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
 
 /*CONSTRUCCIÓN DEL AGENTE*/
-
 function Agent( x=0, y=0 ){
   THREE.Object3D.call( this );
   this.position.x = x;
@@ -36,7 +35,6 @@ Agent.prototype.act = function(environment) {};
 function Environment(){
   THREE.Scene.call( this );
   }
-
 Environment.prototype = new THREE.Scene();
 Environment.prototype.sense = function() {
   for ( var i = 0; i < this.children.length; i++ ){
@@ -179,7 +177,7 @@ function setup(){
   camara.position.z = -150;
   camara.position.x = 45;
   camara.position.y = -45;
-  camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
+  camara.lookAt( new THREE.Vector3( 45, 45, 0 ) );
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   renderer.shadowMap.enabled=true;
