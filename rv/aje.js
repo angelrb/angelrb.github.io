@@ -1,21 +1,21 @@
 //CABALLO GEOMETRIA//
-CaballoGeometry=function()
+Geometriacaballo=function()
 {
   THREE.Geometry.call(this);
-  var BaseCaballo1=new THREE.CylinderGeometry( 0.2, 0.35, 0.6, 32 );
-  var CuerpoCaballo1=new THREE.BoxGeometry(0.2,0.25,0.2);
-  var CabezaCaballo1=new THREE.BoxGeometry(0.5,0.2,0.2);
-  BaseCaballo1.translate(0,0.4,0);
-  CuerpoCaballo1.translate(0,0.8,0);
-  CabezaCaballo1.translate(0.1,1,0);
-  var BaseCaballo=new THREE.Mesh(BaseCaballo1);
-  var CuerpoCaballo=new THREE.Mesh(CuerpoCaballo1);
-  var CabezaCaballo=new THREE.Mesh(CabezaCaballo1);
-  this.merge(BaseCaballo.geometry,BaseCaballo.matrix);
-  this.merge(CuerpoCaballo.geometry,CuerpoCaballo.matrix);
-  this.merge(CabezaCaballo.geometry,CabezaCaballo.matrix);
+  var Base=new THREE.CylinderGeometry( 0.2, 0.35, 0.6, 32 );
+  var Cuerpo=new THREE.BoxGeometry(0.2,0.25,0.2);
+  var Cabeza=new THREE.BoxGeometry(0.5,0.2,0.2);
+  Base.translate(0,0.4,0);
+  Cuerpo.translate(0,0.8,0);
+  Cabeza.translate(0.1,1,0);
+  var Base1=new THREE.Mesh(Base);
+  var Cuerpo1=new THREE.Mesh(Cuerpo);
+  var Cabeza1=new THREE.Mesh(Cabeza);
+  this.merge(Base1.geometry,Base1.matrix);
+  this.merge(Cuerpo1.geometry,Cuerpo1.matrix);
+  this.merge(Cabeza1.geometry,Cabeza1.matrix);
 }
-CaballoGeometry.prototype=new THREE.Geometry();
+Geometriacaballo.prototype=new THREE.Geometry();
 
 //ALFIL GEOMETRIA//
 AlfilGeometry=function()
@@ -413,7 +413,7 @@ function Caballo(tex,x,y)
   this.position.set(x,y,0);
   this.cnt = 0;
   this.sensor=new Sensor();
-  this.actuator=new THREE.Mesh(new CaballoGeometry(),new THREE.MeshLambertMaterial({map:textura}));
+  this.actuator=new THREE.Mesh(new Geometriacaballo(),new THREE.MeshLambertMaterial({map:textura}));
   this.piernai=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.piernad=new THREE.Mesh(new THREE.BoxGeometry(1,1,6),new THREE.MeshLambertMaterial({map:textura}));
   this.brazoi=new THREE.Mesh(new THREE.BoxGeometry(1,6,1),new THREE.MeshLambertMaterial({map:textura}));
