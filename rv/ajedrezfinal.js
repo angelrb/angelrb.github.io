@@ -210,7 +210,7 @@ this.merge(baseMalla.geometry,baseMalla.matrix);
 this.merge(base2Malla.geometry,base2Malla.matrix);
 this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix);
-this.scale(3,9,3);
+this.scale(4,4,6);
 }
 PeonGeometry.prototype=new THREE.Geometry();
 
@@ -835,9 +835,9 @@ function Torre(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('maderaB.jpg');
+    textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new TorreGeometry(),new THREE.MeshLambertMaterial({map:textura}));
@@ -923,9 +923,9 @@ function Peon(sTP,x,y)
   Agent.call(this,x,y);
   this.sTP = sTP;
   if(this.sTP===true)
-    textura=cargador.load('maderaN.jpg');
+    textura=cargador.load('metaln.jpg');
   else
-    textura=cargador.load('maderaB.jpg');
+    textura=cargador.load('aluminio.jpg');
   this.position.set(x,y,0);
   this.sensor=new Sensor();
   this.actuator=new THREE.Mesh(new PeonGeometry(),new THREE.MeshLambertMaterial({map:textura}));
