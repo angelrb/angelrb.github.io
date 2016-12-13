@@ -291,10 +291,10 @@ Environment.prototype.act=function()
 function Casillas(size,x,y)
 {
   cargador=new THREE.TextureLoader();
-  if(sTC===1){
+  if(tec===1){
     textura=cargador.load('MarmolBlanco.jpg');
     THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
-  else if (sTC===2){
+  else if (tec===2){
     textura=cargador.load('MarmolGris.jpg');
     THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,10,10,10,10),new THREE.MeshLambertMaterial({map:textura}));}
   else{
@@ -319,21 +319,21 @@ Environment.prototype.setMapCasilla=function(map)
     {
       if(map[i][j]==="n")
       {
-        sTC=1;
+        tec=1;
         Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="b")
       {
-        sTC=2;
+        tec=2;
         Casilla=new Casillas(10,(i*10)-45,(j*10)-45);
         Casilla.receiveShadow=true;
         this.add(Casilla);
       }
       else if(map[i][j]==="B")
       {
-        sTC=3;
+        tec=3;
         Borde=new Casillas(10,(i*10)-45,(j*10)-45);
         Borde.receiveShadow=true;
         this.add(Borde);
@@ -1365,7 +1365,7 @@ function loop()
   renderizador.render(environment,camara);
 }
 
-var a=d=0.01,c,b,bi=0,bj=0,nj=0,ni=0,turno=false,sTC,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
+var a=d=0.01,c,b,bi=0,bj=0,nj=0,ni=0,turno=false,tec,id,environment,camara,renderizador,luzpuntual,avance,seleccion,x,X,Y,Z,z,y,activar=false,seleccionO=true,seleccionF2=false,seleccionF1=false,xf,yf;
 
 setup();
 loop();
