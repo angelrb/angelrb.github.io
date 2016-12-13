@@ -121,7 +121,7 @@ this.merge(base7Malla.geometry,base7Malla.matrix);
 this.merge(base8Malla.geometry,base8Malla.matrix);
 this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(base10Malla.geometry,base10Malla.matrix);
-this.scale(4,4,10);
+this.scale(5,10,5);
 }
 ReinaGeometry.prototype=new THREE.Geometry();
 
@@ -185,7 +185,7 @@ this.merge(base9Malla.geometry,base9Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix); 
 this.merge(cima1Malla.geometry,cima1Malla.matrix);
 this.merge(cima2Malla.geometry,cima2Malla.matrix); 
-this.scale(4,4,10);
+this.scale(5,10,5);
 }
 ReyGeometry.prototype=new THREE.Geometry();
 
@@ -210,7 +210,7 @@ this.merge(baseMalla.geometry,baseMalla.matrix);
 this.merge(base2Malla.geometry,base2Malla.matrix);
 this.merge(base3Malla.geometry,base3Malla.matrix);
 this.merge(cimaMalla.geometry,cimaMalla.matrix);
-this.scale(4,4,6);
+this.scale(3,9,3);
 }
 PeonGeometry.prototype=new THREE.Geometry();
 
@@ -261,7 +261,7 @@ this.merge(punta1Malla.geometry,punta1Malla.matrix);
 this.merge(punta2Malla.geometry,punta2Malla.matrix);
 this.merge(punta3Malla.geometry,punta3Malla.matrix);
 this.merge(anilloMalla.geometry,anilloMalla.matrix);
-this.scale(4,4,10);
+this.scale(5,10,5);
 }
 TorreGeometry.prototype=new THREE.Geometry();
 
