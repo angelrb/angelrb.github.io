@@ -23,7 +23,7 @@ this.merge(cimaMalla.geometry,cimaMalla.matrix);
 PROTOTIPO.Peon.prototype = new THREE.Geometry();
 
 /*CONSTRUCCIÓN DEL AGENTE*/
-function Agent( x=45, y=-45 ){
+function Agent( x=0, y=0){
   THREE.Object3D.call( this );
   this.position.x = x;
   this.position.y = y;
@@ -129,19 +129,19 @@ Pieza.prototype = new Agent();
 
 function movement(event) { 
   var keyboard = event.which;  
-  var avance = 10;
+  var avance = 100;
   switch ( keyboard ){
     case 37:
-      environment.children[100].position.x+=-avance;
-    break;
-    case 38:
-      environment.children[100].position.y+=avance;
-    break;
-    case 39:
       environment.children[100].position.x+=avance;
     break;
-    case 40:
+    case 38:
       environment.children[100].position.y+=-avance;
+    break;
+    case 39:
+      environment.children[100].position.x+=-avance;
+    break;
+    case 40:
+      environment.children[100].position.y+=avance;
     break;
     }
 }
@@ -174,18 +174,17 @@ function setup(){
   environment.setMap( mapa );
   environment.setMapPiece( pieza );
   camara = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 1, 1000 );
-  camara.position.z = -150;
-  camara.position.x = 45;
-  camara.position.y = -45;
-  camara.lookAt( new THREE.Vector3( 45, 45, 0 ) );
+  camara.position.z = 120;
+  camara.position.y = -90;
+  camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
-  luzPuntual=new THREE.PointLight(0xFFFFFF,2);
-  luzPuntual.position.x = -70;
-  luzPuntual.position.y = -20;
-  luzPuntual.position.z = -60;
+  luzPuntual=new THREE.PointLight(0xFFFFFF);
+  luzPuntual.position.x = 50;
+  luzPuntual.position.y = -50;
+  luzPuntual.position.z = 50;
   luzPuntual.castShadow=true;
   environment.add( camara );
   environment.add( luzPuntual );
