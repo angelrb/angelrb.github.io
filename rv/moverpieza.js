@@ -129,7 +129,7 @@ Pieza.prototype = new Agent();
 
 function movement(event) { 
   var keyboard = event.which;  
-  var avance = 100;
+  var avance = 10;
   switch ( keyboard ){
     case 37:
       environment.children[100].position.x+=avance;
