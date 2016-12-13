@@ -175,14 +175,14 @@ function setup(){
   environment.setMapPiece( pieza );
   camara = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 1, 1000 );
   camara.position.z = 100;
-  camara.position.y = -90;
+  camara.position.y = -50;
   camara.lookAt( new THREE.Vector3( 0, 0, 0 ) );
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
   luzPuntual=new THREE.PointLight(0xFFFFFF);
-  luzPuntual.position.x = 120;
+  luzPuntual.position.x = -45;
   luzPuntual.position.y = -45;
   luzPuntual.position.z = -45;
   luzPuntual.castShadow=true;
