@@ -182,9 +182,9 @@ function setup(){
   renderer.shadowMap.enabled=true;
   document.body.appendChild( renderer.domElement );
   luzPuntual=new THREE.PointLight(0xFFFFFF);
-  luzPuntual.position.x = -45;
+  luzPuntual.position.x = 45;
   luzPuntual.position.y = -45;
-  luzPuntual.position.z = -45;
+  luzPuntual.position.z = 45;
   luzPuntual.castShadow=true;
   environment.add( camara );
   environment.add( luzPuntual );
